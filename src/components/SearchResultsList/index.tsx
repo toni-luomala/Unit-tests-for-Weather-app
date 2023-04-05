@@ -1,5 +1,10 @@
 import styled from '@emotion/styled';
 import SearchResultsItem from 'components/SearchResultsItem';
+import GeocodingResult from 'utils/GeocodingResult';
+
+interface SearchResultsListProps {
+  results: GeocodingResult[];
+}
 
 const ResultsContainer = styled.div({
   position: 'absolute',
@@ -17,7 +22,7 @@ const ResultsDiv = styled.div({
   border: '1px solid black',
 });
 
-const SearchResultsList = (props: any) => {
+const SearchResultsList = (props: SearchResultsListProps) => {
   console.log('results: ', props.results);
 
   if (props.results.length < 1) <></>;
@@ -25,7 +30,7 @@ const SearchResultsList = (props: any) => {
   return (
     <ResultsContainer>
       <ResultsDiv>
-        {props.results.map((result: any) => (
+        {props.results.map((result: GeocodingResult) => (
           <SearchResultsItem key={result.id} result={result} />
         ))}
       </ResultsDiv>

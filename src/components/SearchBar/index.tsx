@@ -15,7 +15,7 @@ const SearchInput = styled.input({
 });
 
 const SearchBar = () => {
-  const { searchWord, setSearchWord, results, loading } = useSearch();
+  const { searchWord, setSearchWord, results } = useSearch();
   const [isActive, setIsActive] = useState(false);
 
   return (
@@ -30,7 +30,7 @@ const SearchBar = () => {
       />
 
       {isActive && results && results.length > 0 && (
-        <SearchResultsList results={results} loading={loading} />
+        <SearchResultsList results={results} />
       )}
     </SearchForm>
   );

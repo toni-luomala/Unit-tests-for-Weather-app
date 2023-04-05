@@ -7,7 +7,7 @@ export default function useSearch() {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    let timer: any = null;
+    let timer: NodeJS.Timeout | null = null;
 
     if (searchWord !== '' || searchWord.length > 1) {
       setLoading(true);
@@ -31,7 +31,9 @@ export default function useSearch() {
     }
 
     return () => {
-      clearTimeout(timer);
+      if (timer) {
+        clearTimeout(timer);
+      }
     };
   }, [searchWord]);
 

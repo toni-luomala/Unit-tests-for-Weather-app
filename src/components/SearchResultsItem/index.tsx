@@ -1,4 +1,9 @@
 import styled from '@emotion/styled';
+import GeocodingResult from 'utils/GeocodingResult';
+
+interface SearchResultsItemProps {
+  result: GeocodingResult;
+}
 
 const Item = styled.p({
   cursor: 'pointer',
@@ -8,15 +13,16 @@ const Bold = styled.span({
   fontWeight: 'bold',
 });
 
-const SearchResultsItem = (props: any) => {
-  console.log(props.result);
+const SearchResultsItem = ({ result }: SearchResultsItemProps) => {
+  console.log(result);
 
   return (
     <>
       <Item>
-        <Bold>{props.result.name}</Bold>
+        <Bold>{result.name}</Bold>
 
-        {props.result.admin1 ? `, ${props.result.admin1}` : ''}
+        {result.admin1 ? `, ${result.admin1}` : ''}
+        {result.country ? `, ${result.country}` : ''}
       </Item>
     </>
   );
