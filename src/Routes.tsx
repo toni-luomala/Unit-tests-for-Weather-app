@@ -5,7 +5,7 @@ import {
   Navigate,
 } from 'react-router-dom';
 import HomePage from 'pages/Home';
-import SearchPage from 'pages/Search';
+import LocationPage from 'pages/Location';
 import SettingsPage from 'pages/Settings';
 
 const AppRoutes = () => {
@@ -15,7 +15,7 @@ const AppRoutes = () => {
         <Route path="/" element={<HomePage />} />
         <Route path="*" element={<Navigate to="/" replace />} />
 
-        <Route path="/search" element={<SearchPage />} />
+        <Route path="/search" element={<LocationPage />} />
         <Route path="/settings" element={<SettingsPage />} />
       </Routes>
     </Router>

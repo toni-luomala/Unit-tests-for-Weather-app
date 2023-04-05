@@ -1,7 +1,7 @@
 const SettingsToggler = () => {
   return (
     <>
-      <p>SearchBar</p>
+      <p>SettingsToggler</p>
     </>
   );
 };
