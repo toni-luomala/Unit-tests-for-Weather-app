@@ -14,8 +14,6 @@ const Bold = styled.span({
 });
 
 const SearchResultsItem = ({ result }: SearchResultsItemProps) => {
-  console.log(result);
-
   return (
     <>
       <Item>
