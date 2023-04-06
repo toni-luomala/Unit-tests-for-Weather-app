@@ -27,7 +27,10 @@ const App = () => {
           <Route path="/" element={<HomePage />} />
           <Route path="*" element={<Navigate to="/" replace />} />
 
-          <Route path="/search" element={<LocationPage />} />
+          <Route
+            path="/location/:latitude/:longitude"
+            element={<LocationPage />}
+          />
           <Route path="/settings" element={<SettingsPage />} />
         </Routes>
       </ContentContainer>

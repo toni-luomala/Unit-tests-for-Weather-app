@@ -17,6 +17,28 @@ const SearchInput = styled.input({
 const SearchBar = () => {
   const { searchWord, setSearchWord, results } = useSearch();
   const [isActive, setIsActive] = useState(false);
+  const [hideResultsTimeout, setHideResultsTimeout] = useState<number | null>(
+    null
+  );
+
+  const handleBlur = () => {
+    // Delay hiding the results for 100ms
+    setHideResultsTimeout(
+      window.setTimeout(() => {
+        setIsActive(false);
+      }, 100)
+    );
+  };
+
+  const handleFocus = () => {
+    // Clear the timeout when the input is focused again
+    if (hideResultsTimeout) {
+      window.clearTimeout(hideResultsTimeout);
+      setHideResultsTimeout(null);
+    }
+
+    setIsActive(true);
+  };
 
   return (
     <SearchForm>
@@ -25,8 +47,8 @@ const SearchBar = () => {
         placeholder="Search locations..."
         value={searchWord}
         onChange={(e) => setSearchWord(e.target.value)}
-        onFocus={() => setIsActive(true)}
-        onBlur={() => setIsActive(false)}
+        onFocus={handleFocus}
+        onBlur={handleBlur}
       />
 
       {isActive && results && results.length > 0 && (

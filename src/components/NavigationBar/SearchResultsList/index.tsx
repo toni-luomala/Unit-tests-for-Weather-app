@@ -31,8 +31,6 @@ const ResultsDiv = styled.div({
 });
 
 const SearchResultsList = (props: SearchResultsListProps) => {
-  console.log('results: ', props.results);
-
   if (props.results.length < 1) <></>;
 
   return (

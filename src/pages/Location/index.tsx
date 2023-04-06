@@ -1,7 +1,15 @@
+import { WeatherData } from 'components/Weather';
+import { useParams } from 'react-router-dom';
+
 const LocationPage = () => {
+  const { latitude, longitude } = useParams<{
+    latitude: string;
+    longitude: string;
+  }>();
+
   return (
     <>
-      <p>This is the LocationPage.</p>
+      <WeatherData latitude={latitude} longitude={longitude} />
     </>
   );
 };
