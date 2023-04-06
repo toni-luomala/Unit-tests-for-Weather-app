@@ -1,4 +1,3 @@
-import { NavBar } from 'components/NavigationBar';
 import {
   BrowserRouter as Router,
   Routes,
@@ -8,6 +7,7 @@ import {
 import HomePage from 'pages/Home';
 import LocationPage from 'pages/Location';
 import SettingsPage from 'pages/Settings';
+import { NavBar } from 'components/NavigationBar';
 
 import styled from '@emotion/styled';
 
@@ -28,7 +28,7 @@ const App = () => {
           <Route path="*" element={<Navigate to="/" replace />} />
 
           <Route
-            path="/location/:latitude/:longitude"
+            path="/location/:latitude/:longitude/:name?/:admin1?"
             element={<LocationPage />}
           />
           <Route path="/settings" element={<SettingsPage />} />

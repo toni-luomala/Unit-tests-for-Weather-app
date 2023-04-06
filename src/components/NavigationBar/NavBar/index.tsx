@@ -4,15 +4,21 @@ import SearchBar from 'components/NavigationBar/SearchBar';
 import SettingsButton from 'components/NavigationBar/SettingsButton';
 
 const NavigationBar = styled.div({
+  width: '100%',
+  height: '80px',
+  backgroundColor: 'gray',
+  color: 'white',
+});
+
+const NavigationBarContent = styled.div({
+  width: '95%',
+  height: '100%',
+  maxWidth: '1200px',
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'space-between',
-  width: '100%',
-  height: '80px',
-  padding: '0px 10px',
   boxSizing: 'border-box',
-  backgroundColor: 'gray',
-  color: 'white',
+  margin: 'auto',
 });
 
 const SearchBarAndSettingsDiv = styled.div({
@@ -26,13 +32,15 @@ const SearchBarAndSettingsDiv = styled.div({
 const NavBar = () => {
   return (
     <NavigationBar>
-      <NavBarTitle />
+      <NavigationBarContent>
+        <NavBarTitle />
 
-      <SearchBarAndSettingsDiv>
-        <SearchBar />
+        <SearchBarAndSettingsDiv>
+          <SearchBar />
 
-        <SettingsButton />
-      </SearchBarAndSettingsDiv>
+          <SettingsButton />
+        </SearchBarAndSettingsDiv>
+      </NavigationBarContent>
     </NavigationBar>
   );
 };
