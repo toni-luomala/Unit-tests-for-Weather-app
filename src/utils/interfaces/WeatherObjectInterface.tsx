@@ -28,7 +28,7 @@ interface Daily {
   weathercode: number[];
 }
 
-export default interface WeatherObject {
+export default interface WeatherObjectInterface {
   latitude: number;
   longitude: number;
   generationtime_ms: number;

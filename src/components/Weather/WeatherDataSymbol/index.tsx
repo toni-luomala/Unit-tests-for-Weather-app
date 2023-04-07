@@ -1,4 +1,4 @@
-import weatherCodeSymbolReturner from 'utils/WeatherCodeSymbol';
+import weatherCodeSymbolReturner from 'utils/functions/WeatherCodeSymbol';
 import styled from '@emotion/styled';
 
 interface WeatherDataSymbolProps {

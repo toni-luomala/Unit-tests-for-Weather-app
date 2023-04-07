@@ -1,4 +1,4 @@
-import WeatherObject from 'utils/interfaces/WeatherObject';
+import WeatherObject from 'utils/interfaces/WeatherObjectInterface';
 import WeatherDataDailyItem from '../WeatherDataDailyItem';
 import styled from '@emotion/styled';
 

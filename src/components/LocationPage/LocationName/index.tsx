@@ -3,7 +3,7 @@ interface WeatherDataTitleProps {
   admin1: string | undefined;
 }
 
-const WeatherDataLocation = ({ name, admin1 }: WeatherDataTitleProps) => {
+const LocationName = ({ name, admin1 }: WeatherDataTitleProps) => {
   return (
     <div>
       <h2>
@@ -14,4 +14,4 @@ const WeatherDataLocation = ({ name, admin1 }: WeatherDataTitleProps) => {
   );
 };
 
-export default WeatherDataLocation;
+export default LocationName;

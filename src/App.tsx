@@ -9,7 +9,13 @@ import LocationPage from 'pages/Location';
 import SettingsPage from 'pages/Settings';
 import { NavBar } from 'components/NavigationBar';
 
+import { useDispatch } from 'react-redux';
+import { add } from 'reducers/favoritesSlice';
+
+import FavoriteInterface from 'utils/interfaces/FavoriteInterface';
+
 import styled from '@emotion/styled';
+import { useEffect } from 'react';
 
 const ContentContainer = styled.div({
   width: '95%',
@@ -18,6 +24,20 @@ const ContentContainer = styled.div({
 });
 
 const App = () => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    const storedFavorites = JSON.parse(
+      localStorage.getItem('favorites') || '[]'
+    );
+
+    if (storedFavorites.length) {
+      storedFavorites.forEach((fav: FavoriteInterface) => {
+        dispatch(add(fav));
+      });
+    }
+  }, [dispatch]);
+
   return (
     <Router>
       <NavBar />

@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import { Link } from 'react-router-dom';
-import GeocodingResult from 'utils/interfaces/GeocodingResult';
+import GeocodingResult from 'utils/interfaces/GeocodingInterface';
 
 interface SearchResultsItemProps {
   result: GeocodingResult;
@@ -11,10 +11,6 @@ const Item = styled.p({
   color: 'black',
 });
 
-const Bold = styled.span({
-  fontWeight: 'bold',
-});
-
 const SearchResultsItem = ({ result }: SearchResultsItemProps) => {
   return (
     <Link
@@ -23,7 +19,7 @@ const SearchResultsItem = ({ result }: SearchResultsItemProps) => {
       }${result.admin1 ? '/' + result.admin1 : ''}`}
     >
       <Item>
-        <Bold>{result.name}</Bold>
+        <span className="bold">{result.name}</span>
 
         {result.admin1 ? `, ${result.admin1}` : ''}
         {result.country ? `, ${result.country}` : ''}

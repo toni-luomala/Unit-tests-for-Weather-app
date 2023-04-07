@@ -25,7 +25,7 @@ export default function useSearch() {
             console.error(error);
             setLoading(false);
           });
-      }, 1000);
+      }, 500);
     } else {
       setResults([]);
     }

@@ -1,18 +1,15 @@
 import styled from '@emotion/styled';
 import WeatherDataSymbol from '../WeatherDataSymbol';
-import timeFormatter from 'utils/timeFormatter';
+import timeFormatter from 'utils/functions/timeFormatter';
+import WeatherDataDailyInterface from 'utils/interfaces/WeatherDataDailyInterface';
 
 interface WeatherDataDailyItemInterface {
-  data: any;
+  data: WeatherDataDailyInterface;
 }
 
 const Centered = styled.div({
   textAlign: 'center',
   margin: '0px 15px',
-});
-
-const Bold = styled.span({
-  fontWeight: 'bold',
 });
 
 const WeatherDataDailyItem = ({ data }: WeatherDataDailyItemInterface) => {
@@ -23,15 +20,16 @@ const WeatherDataDailyItem = ({ data }: WeatherDataDailyItemInterface) => {
       <WeatherDataSymbol code={data.weathercode} />
 
       <p>
-        <Bold>Rain</Bold>: {data.precipitation_probability_max} %
+        <span className="bold">Rain</span>: {data.precipitation_probability_max}{' '}
+        %
       </p>
 
       <p>
-        <Bold>Temp max</Bold>. {data.temperature_2m_max}°C
+        <span className="bold">Temp max</span>. {data.temperature_2m_max}°C
       </p>
 
       <p>
-        <Bold>Temp min</Bold>. {data.temperature_2m_min}°C
+        <span className="bold">Temp min</span>. {data.temperature_2m_min}°C
       </p>
     </Centered>
   );

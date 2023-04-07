@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import SearchResultsItem from 'components/NavigationBar/SearchResultsItem';
-import GeocodingResult from 'utils/interfaces/GeocodingResult';
+import GeocodingResult from 'utils/interfaces/GeocodingInterface';
 
 interface SearchResultsListProps {
   results: GeocodingResult[];

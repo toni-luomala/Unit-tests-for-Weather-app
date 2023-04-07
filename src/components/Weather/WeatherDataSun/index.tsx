@@ -1,14 +1,9 @@
-import styled from '@emotion/styled';
-import WeatherObject from 'utils/interfaces/WeatherObject';
-import timeFormatter from 'utils/timeFormatter';
+import WeatherObject from 'utils/interfaces/WeatherObjectInterface';
+import timeFormatter from 'utils/functions/timeFormatter';
 
 interface WeatherDataInterface {
   data: WeatherObject | null;
 }
-
-const Bold = styled.span({
-  fontWeight: 'bold',
-});
 
 const WeatherDataSun = ({ data }: WeatherDataInterface) => {
   return (
@@ -16,12 +11,12 @@ const WeatherDataSun = ({ data }: WeatherDataInterface) => {
       {data?.daily.sunrise && data?.daily.sunset && (
         <>
           <p>
-            <Bold>Sunrise:</Bold>{' '}
+            <span className="bold">Sunrise:</span>{' '}
             {timeFormatter(data?.daily.sunrise[0].toString())}
           </p>
 
           <p>
-            <Bold>Sunset:</Bold>{' '}
+            <span className="bold">Sunset:</span>{' '}
             {timeFormatter(data?.daily.sunset[0].toString())}
           </p>
         </>

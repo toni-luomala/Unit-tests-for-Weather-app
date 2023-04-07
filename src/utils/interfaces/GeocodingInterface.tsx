@@ -1,4 +1,4 @@
-export default interface GeocodingResult {
+export default interface GeocodingInterface {
   id: string;
   name: string;
   latitude: number;

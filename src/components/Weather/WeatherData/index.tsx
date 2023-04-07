@@ -1,6 +1,5 @@
 // Components
 import { Error, Loading } from 'components/Common';
-import WeatherDataLocation from '../WeatherDataLocation';
 import WeatherDataSymbol from '../WeatherDataSymbol';
 import WeatherDataWind from '../WeatherDataWind';
 import WeatherDataTemp from '../WeatherDataTemp';
@@ -10,13 +9,11 @@ import WeatherDataDaily from '../WeatherDataDaily';
 // Other imports
 import styled from '@emotion/styled';
 import useFetch from 'hooks/useFetch';
-import WeatherObject from 'utils/interfaces/WeatherObject';
+import WeatherObject from 'utils/interfaces/WeatherObjectInterface';
 
 interface WeatherDataProps {
   latitude: string | undefined;
   longitude: string | undefined;
-  name: string | undefined;
-  admin1: string | undefined;
 }
 
 interface FetchInterface {
@@ -31,12 +28,7 @@ const Columns = styled.div({
   justifyContent: 'space-between',
 });
 
-const WeatherData = ({
-  latitude,
-  longitude,
-  name,
-  admin1,
-}: WeatherDataProps) => {
+const WeatherData = ({ latitude, longitude }: WeatherDataProps) => {
   const { data, loading, error } = useFetch(
     latitude,
     longitude
@@ -46,16 +38,12 @@ const WeatherData = ({
 
   if (error) return <Error />;
 
-  console.log('data: ', data);
-
   return (
     <>
       {data && (
         <div>
           <Columns>
             <div>
-              <WeatherDataLocation name={name} admin1={admin1} />
-
               <WeatherDataWind data={data} />
 
               <WeatherDataSun data={data} />
