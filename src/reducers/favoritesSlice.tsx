@@ -1,11 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-
-type Favorite = {
-  name: string | undefined;
-  admin1: string | undefined;
-  latitude: string | undefined;
-  longitude: string | undefined;
-};
+import Favorite from 'utils/interfaces/FavoriteInterface';
 
 type FavoritesState = {
   items: Favorite[];

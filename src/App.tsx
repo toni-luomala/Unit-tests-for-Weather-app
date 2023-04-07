@@ -12,7 +12,7 @@ import { NavBar } from 'components/NavigationBar';
 import { useDispatch } from 'react-redux';
 import { add } from 'reducers/favoritesSlice';
 
-import FavoriteInterface from 'utils/interfaces/FavoriteInterface';
+import Favorite from 'utils/interfaces/FavoriteInterface';
 
 import styled from '@emotion/styled';
 import { useEffect } from 'react';
@@ -32,7 +32,7 @@ const App = () => {
     );
 
     if (storedFavorites.length) {
-      storedFavorites.forEach((fav: FavoriteInterface) => {
+      storedFavorites.forEach((fav: Favorite) => {
         dispatch(add(fav));
       });
     }

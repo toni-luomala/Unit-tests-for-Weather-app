@@ -3,7 +3,7 @@ import { FavoritesListItem } from 'components/HomePage';
 
 // Other imports
 import { useSelector } from 'react-redux';
-import FavoriteInterface from 'utils/interfaces/FavoriteInterface';
+import Favorite from 'utils/interfaces/FavoriteInterface';
 
 const FavoritesList = () => {
   const items = useSelector((state: any) => state.favorites.items);
@@ -22,7 +22,7 @@ const FavoritesList = () => {
 
       {items.length !== 0 && (
         <div>
-          {items.map((item: FavoriteInterface, index: number) => (
+          {items.map((item: Favorite, index: number) => (
             <FavoritesListItem key={index} item={item} />
           ))}
         </div>
