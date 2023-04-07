@@ -18,6 +18,16 @@ interface Hourly {
   temperature_2m: number[];
 }
 
+interface Daily {
+  sunset: number[];
+  sunrise: number[];
+  precipitation_probability_max: number[];
+  temperature_2m_max: number[];
+  temperature_2m_min: number[];
+  time: string[];
+  weathercode: number[];
+}
+
 export default interface WeatherObject {
   latitude: number;
   longitude: number;
@@ -29,4 +39,5 @@ export default interface WeatherObject {
   current_weather: CurrentWeather;
   hourly_units: HourlyUnits;
   hourly: Hourly;
+  daily: Daily;
 }

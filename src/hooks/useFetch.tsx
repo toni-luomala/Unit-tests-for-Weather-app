@@ -15,7 +15,7 @@ const useFetch = (
     if (latitude && longitude) {
       axios
         .get(
-          `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&hourly=temperature_2m,rain,snowfall&daily=weathercode,temperature_2m_max,temperature_2m_min,sunrise,sunset&current_weather=true&windspeed_unit=ms&forecast_days=3&timezone=auto`
+          `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&daily=weathercode,temperature_2m_max,temperature_2m_min,sunrise,sunset,precipitation_probability_max&current_weather=true&windspeed_unit=ms&forecast_days=3&timezone=auto`
         )
         .then((res) => {
           setData(res.data);

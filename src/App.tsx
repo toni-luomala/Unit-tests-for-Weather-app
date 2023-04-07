@@ -13,7 +13,7 @@ import styled from '@emotion/styled';
 
 const ContentContainer = styled.div({
   width: '95%',
-  maxWidth: '1200px',
+  maxWidth: '600px',
   margin: '0px auto 0px auto',
 });
 

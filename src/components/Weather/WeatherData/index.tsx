@@ -1,9 +1,16 @@
+// Components
 import { Error, Loading } from 'components/Common';
-import useFetch from 'hooks/useFetch';
 import WeatherDataLocation from '../WeatherDataLocation';
-import weatherCodeSymbolReturner from 'utils/WeatherCodeSymbol';
-import WeatherObject from 'utils/interfaces/WeatherObject';
 import WeatherDataSymbol from '../WeatherDataSymbol';
+import WeatherDataWind from '../WeatherDataWind';
+import WeatherDataTemp from '../WeatherDataTemp';
+import WeatherDataSun from '../WeatherDataSun';
+import WeatherDataDaily from '../WeatherDataDaily';
+
+// Other imports
+import styled from '@emotion/styled';
+import useFetch from 'hooks/useFetch';
+import WeatherObject from 'utils/interfaces/WeatherObject';
 
 interface WeatherDataProps {
   latitude: string | undefined;
@@ -17,6 +24,12 @@ interface FetchInterface {
   error: string | null;
   data: WeatherObject | null;
 }
+
+const Columns = styled.div({
+  display: 'flex',
+  flexDirection: 'row',
+  justifyContent: 'space-between',
+});
 
 const WeatherData = ({
   latitude,
@@ -37,11 +50,25 @@ const WeatherData = ({
 
   return (
     <>
-      <WeatherDataLocation name={name} admin1={admin1} />
-
       {data && (
         <div>
-          <WeatherDataSymbol code={data.current_weather.weathercode} />
+          <Columns>
+            <div>
+              <WeatherDataLocation name={name} admin1={admin1} />
+
+              <WeatherDataWind data={data} />
+
+              <WeatherDataSun data={data} />
+            </div>
+
+            <div>
+              <WeatherDataSymbol code={data.current_weather.weathercode} />
+
+              <WeatherDataTemp temp={data.current_weather.temperature} />
+            </div>
+          </Columns>
+
+          <WeatherDataDaily data={data} />
         </div>
       )}
     </>
