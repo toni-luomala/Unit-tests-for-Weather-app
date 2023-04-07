@@ -1,5 +1,8 @@
+// Components
+import { SearchResultsList } from 'components/NavigationBar';
+
+// Other imports
 import styled from '@emotion/styled';
-import SearchResultsList from 'components/NavigationBar/SearchResultsList';
 import useSearch from 'hooks/useSearch';
 import { useState } from 'react';
 

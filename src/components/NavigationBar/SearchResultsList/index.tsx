@@ -1,5 +1,8 @@
-import styled from '@emotion/styled';
+// Components
 import SearchResultsItem from 'components/NavigationBar/SearchResultsItem';
+
+// Other imports
+import styled from '@emotion/styled';
 import GeocodingResult from 'utils/interfaces/GeocodingInterface';
 
 interface SearchResultsListProps {

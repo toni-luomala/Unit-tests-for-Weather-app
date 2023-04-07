@@ -1,5 +1,5 @@
-import { Link } from 'react-router-dom';
 import FavoriteInterface from 'utils/interfaces/FavoriteInterface';
+import { Link } from 'react-router-dom';
 
 interface FavoritesListItemProps {
   item: FavoriteInterface;

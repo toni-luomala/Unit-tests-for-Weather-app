@@ -1,10 +1,10 @@
 // Components
 import { Error, Loading } from 'components/Common';
-import WeatherDataSymbol from '../WeatherDataSymbol';
-import WeatherDataWind from '../WeatherDataWind';
-import WeatherDataTemp from '../WeatherDataTemp';
-import WeatherDataSun from '../WeatherDataSun';
-import WeatherDataDaily from '../WeatherDataDaily';
+import { WeatherDataSymbol } from 'components/Weather';
+import { WeatherDataWind } from 'components/Weather';
+import { WeatherDataTemp } from 'components/Weather';
+import { WeatherDataSun } from 'components/Weather';
+import { WeatherDataDaily } from 'components/Weather';
 
 // Other imports
 import styled from '@emotion/styled';

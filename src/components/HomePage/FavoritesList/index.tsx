@@ -1,6 +1,9 @@
+// Components
+import { FavoritesListItem } from 'components/HomePage';
+
+// Other imports
 import { useSelector } from 'react-redux';
 import FavoriteInterface from 'utils/interfaces/FavoriteInterface';
-import FavoritesListItem from '../FavoritesListItem';
 
 const FavoritesList = () => {
   const items = useSelector((state: any) => state.favorites.items);

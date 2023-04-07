@@ -1,5 +1,8 @@
+// Components
+import { WeatherDataSymbol } from 'components/Weather';
+
+// Other imports
 import styled from '@emotion/styled';
-import WeatherDataSymbol from '../WeatherDataSymbol';
 import timeFormatter from 'utils/functions/timeFormatter';
 import WeatherDataDailyInterface from 'utils/interfaces/WeatherDataDailyInterface';
 

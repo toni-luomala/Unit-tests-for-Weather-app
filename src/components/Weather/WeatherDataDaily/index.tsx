@@ -1,5 +1,8 @@
+// Components
+import { WeatherDataDailyItem } from 'components/Weather';
+
+// Other imports
 import WeatherObject from 'utils/interfaces/WeatherObjectInterface';
-import WeatherDataDailyItem from '../WeatherDataDailyItem';
 import styled from '@emotion/styled';
 
 interface WeatherDataInterface {

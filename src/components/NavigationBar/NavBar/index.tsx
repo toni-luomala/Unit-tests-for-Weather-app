@@ -1,7 +1,10 @@
-import styled from '@emotion/styled';
+// Components
 import NavBarTitle from 'components/NavigationBar/NavBarTitle';
 import SearchBar from 'components/NavigationBar/SearchBar';
 import SettingsButton from 'components/NavigationBar/SettingsButton';
+
+// Other imports
+import styled from '@emotion/styled';
 
 const NavigationBar = styled.div({
   width: '100%',
