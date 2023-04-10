@@ -1,7 +1,11 @@
+import { SettingsPageContainer } from 'components/SettingsPage';
+
 const SettingsPage = () => {
   return (
     <>
-      <p>This is the SettingsPage.</p>
+      <h2>Settings</h2>
+
+      <SettingsPageContainer />
     </>
   );
 };

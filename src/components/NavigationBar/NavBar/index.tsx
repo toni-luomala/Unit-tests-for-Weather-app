@@ -9,7 +9,7 @@ import styled from '@emotion/styled';
 const NavigationBar = styled.div({
   width: '100%',
   height: '80px',
-  backgroundColor: 'gray',
+  backgroundColor: '#545454',
   color: 'white',
 });
 

@@ -1,19 +1,18 @@
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  Navigate,
-} from 'react-router-dom';
+// Components and pages:
+import { NavBar } from 'components/NavigationBar';
 import HomePage from 'pages/Home';
 import LocationPage from 'pages/Location';
 import SettingsPage from 'pages/Settings';
-import { NavBar } from 'components/NavigationBar';
-
-import { useDispatch } from 'react-redux';
-import { add } from 'reducers/favoritesSlice';
-
+// Utils imports:
 import Favorite from 'utils/interfaces/FavoriteInterface';
-
+import { setBodyStyles } from 'utils/functions/setBodyStyles';
+import Theme from 'utils/interfaces/ThemeInterface';
+// Redux, reducers:
+import { useDispatch, useSelector } from 'react-redux';
+import { toggleTheme } from 'reducers/themeSlice';
+import { add } from 'reducers/favoritesSlice';
+// Other imports:
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import styled from '@emotion/styled';
 import { useEffect } from 'react';
 
@@ -25,6 +24,7 @@ const ContentContainer = styled.div({
 
 const App = () => {
   const dispatch = useDispatch();
+  const darkMode = useSelector((state: Theme) => state.theme.darkMode);
 
   useEffect(() => {
     const storedFavorites = JSON.parse(
@@ -38,8 +38,21 @@ const App = () => {
     }
   }, [dispatch]);
 
+  useEffect(() => {
+    setBodyStyles(darkMode);
+  }, [darkMode]);
+
+  useEffect(() => {
+    const storedTheme = localStorage.getItem('theme');
+
+    if (storedTheme) {
+      const parsedTheme = JSON.parse(storedTheme);
+      dispatch(toggleTheme(parsedTheme));
+    }
+  }, [dispatch]);
+
   return (
-    <Router>
+    <BrowserRouter>
       <NavBar />
 
       <ContentContainer>
@@ -54,7 +67,7 @@ const App = () => {
           <Route path="/settings" element={<SettingsPage />} />
         </Routes>
       </ContentContainer>
-    </Router>
+    </BrowserRouter>
   );
 };
 
