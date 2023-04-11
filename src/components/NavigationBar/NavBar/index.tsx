@@ -1,5 +1,5 @@
 // Components
-import NavBarTitle from 'components/NavigationBar/NavBarTitle';
+import NavBarLogo from 'components/NavigationBar/NavBarTitle';
 import SearchBar from 'components/NavigationBar/SearchBar';
 import SettingsButton from 'components/NavigationBar/SettingsButton';
 
@@ -36,7 +36,7 @@ const NavBar = () => {
   return (
     <NavigationBar>
       <NavigationBarContent>
-        <NavBarTitle />
+        <NavBarLogo />
 
         <SearchBarAndSettingsDiv>
           <SearchBar />

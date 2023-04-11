@@ -1,21 +1,17 @@
 import styled from '@emotion/styled';
 import { Link } from 'react-router-dom';
 
-const Title = styled.h1({
-  cursor: 'pointer',
-  margin: '0px 20px 0px 0px',
-  color: 'white',
-  '@media(max-width: 550px)': {
-    fontSize: '1.5rem',
-  },
+const Logo = styled.img({
+  width: '100%',
+  maxWidth: '300px',
 });
 
-const NavBarTitle = () => {
+const NavBarLogo = () => {
   return (
     <Link to="/">
-      <Title>Weather</Title>
+      <Logo src={require('assets/logo.png')} alt="Logo" />
     </Link>
   );
 };
 
-export default NavBarTitle;
+export default NavBarLogo;
