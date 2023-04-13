@@ -9,17 +9,11 @@ import { WeatherDataDaily } from 'components/Weather';
 // Other imports
 import styled from '@emotion/styled';
 import useFetch from 'hooks/useFetch';
-import WeatherObject from 'utils/interfaces/WeatherObjectInterface';
+import FetchInterface from 'utils/interfaces/FetchInterface';
 
 interface WeatherDataProps {
   latitude: string | undefined;
   longitude: string | undefined;
-}
-
-interface FetchInterface {
-  loading: boolean;
-  error: string | null;
-  data: WeatherObject | null;
 }
 
 const Columns = styled.div({
@@ -28,7 +22,7 @@ const Columns = styled.div({
   justifyContent: 'space-between',
 });
 
-const WeatherData = ({ latitude, longitude }: WeatherDataProps) => {
+const WeatherDataContainer = ({ latitude, longitude }: WeatherDataProps) => {
   const { data, loading, error } = useFetch(
     latitude,
     longitude
@@ -63,4 +57,4 @@ const WeatherData = ({ latitude, longitude }: WeatherDataProps) => {
   );
 };
 
-export default WeatherData;
+export default WeatherDataContainer;

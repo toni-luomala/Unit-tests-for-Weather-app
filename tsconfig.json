@@ -20,11 +20,11 @@
       "*": ["node_modules/*", "src/types/*"],
       "assets/*": ["assets/*"],
       "components/*": ["components/*"],
-      "pages/*": ["pages/*"],
       "hooks/*": ["hooks/*"],
-      "utils/*": ["utils/*"],
+      "pages/*": ["pages/*"],
       "store/*": ["store/*"],
-      "reducers/*": ["reducers/*"]
+      "reducers/*": ["reducers/*"],
+      "utils/*": ["utils/*"]
     }
   },
   "include": ["src/**/*.tsx", "src/*.tsx"]

@@ -1,5 +1,5 @@
 // Components
-import { WeatherData } from 'components/Weather';
+import { WeatherDataContainer } from 'components/Weather';
 import { LocationName } from 'components/LocationPage';
 import { FavoritesButton } from 'components/LocationPage';
 
@@ -27,7 +27,7 @@ const LocationPage = () => {
         />
       )}
 
-      <WeatherData latitude={latitude} longitude={longitude} />
+      <WeatherDataContainer latitude={latitude} longitude={longitude} />
     </>
   );
 };

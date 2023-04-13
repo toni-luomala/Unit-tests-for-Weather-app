@@ -2,13 +2,13 @@ import WeatherObject from 'utils/interfaces/WeatherObjectInterface';
 import timeFormatter from 'utils/functions/timeFormatter';
 
 interface WeatherDataInterface {
-  data: WeatherObject | null;
+  data: WeatherObject;
 }
 
 const WeatherDataSun = ({ data }: WeatherDataInterface) => {
   return (
     <>
-      {data?.daily.sunrise && data?.daily.sunset && (
+      {data.daily.sunrise && data.daily.sunset && (
         <>
           <p>
             <span className="bold">Sunrise:</span>{' '}

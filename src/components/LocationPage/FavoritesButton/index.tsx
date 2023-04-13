@@ -1,31 +1,19 @@
-import { useDispatch, useSelector } from 'react-redux';
 import handleAddToFavorites from 'utils/functions/handleAddToFavorites';
 import isInFavorites from 'utils/functions/isInFavorites';
+import Favorite from 'utils/interfaces/FavoriteInterface';
+import { useDispatch, useSelector } from 'react-redux';
 
-interface FavoritesButtonProps {
-  name: string;
-  admin1: string;
-  latitude: string;
-  longitude: string;
-}
-
-const FavoritesButton = ({
-  name,
-  admin1,
-  latitude,
-  longitude,
-}: FavoritesButtonProps) => {
+const FavoritesButton = ({ name, admin1, latitude, longitude }: Favorite) => {
   const dispatch = useDispatch();
   const items = useSelector((state: any) => state.favorites.items);
-
   const inFavorites = isInFavorites(items, latitude, longitude);
 
-  const handleAddToFavoritesWrapper = () => {
-    handleAddToFavorites(dispatch, items, name, admin1, latitude, longitude);
-  };
-
   return (
-    <button onClick={handleAddToFavoritesWrapper}>
+    <button
+      onClick={() =>
+        handleAddToFavorites(dispatch, items, name, admin1, latitude, longitude)
+      }
+    >
       {inFavorites ? 'Remove from favorites' : 'Add to favorites'}
     </button>
   );

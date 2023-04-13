@@ -20,20 +20,25 @@ const ListItem = styled.div({
   },
 });
 
-const FavoritesListItem = ({ item }: FavoritesListItemProps) => {
+const FavoritesListItem = ({
+  item: { name, admin1, latitude, longitude },
+}: FavoritesListItemProps) => {
   return (
     <Link
-      to={`/location/${item.latitude}/${item.longitude}${
-        item.name ? '/' + item.name : ''
-      }${item.admin1 ? '/' + item.admin1 : ''}`}
+      to={`/location/${latitude}/${longitude}${name ? `/${name}` : ''}${
+        admin1 ? `/${admin1}` : ''
+      }`}
+      rel="nofollow"
     >
       <ListItem>
         <h4>
-          {item.name}
-          {item.admin1 ? ', ' + item.admin1 : ''}
+          {name}
+          {admin1 ? `, ${admin1}` : ''}
         </h4>
 
-        <span>⮞</span>
+        <span role="img" aria-label="Go to location page">
+          ⮞
+        </span>
       </ListItem>
     </Link>
   );

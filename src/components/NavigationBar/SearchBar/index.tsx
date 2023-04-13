@@ -20,14 +20,14 @@ const SearchInput = styled.input({
 const SearchBar = () => {
   const { searchWord, setSearchWord, results } = useSearch();
   const [isActive, setIsActive] = useState(false);
-  const [hideResultsTimeout, setHideResultsTimeout] = useState<number | null>(
-    null
-  );
+  const [hideResultsTimeout, setHideResultsTimeout] = useState<ReturnType<
+    typeof setTimeout
+  > | null>(null);
 
   const handleBlur = () => {
     // Delay hiding the results for 100ms
     setHideResultsTimeout(
-      window.setTimeout(() => {
+      setTimeout(() => {
         setIsActive(false);
       }, 100)
     );
@@ -36,7 +36,7 @@ const SearchBar = () => {
   const handleFocus = () => {
     // Clear the timeout when the input is focused again
     if (hideResultsTimeout) {
-      window.clearTimeout(hideResultsTimeout);
+      clearTimeout(hideResultsTimeout);
       setHideResultsTimeout(null);
     }
 

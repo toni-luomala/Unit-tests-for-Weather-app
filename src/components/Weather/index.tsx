@@ -1,4 +1,4 @@
-export { default as WeatherData } from './WeatherData';
+export { default as WeatherDataContainer } from './WeatherDataContainer';
 export { default as WeatherDataDaily } from './WeatherDataDaily';
 export { default as WeatherDataDailyItem } from './WeatherDataDailyItem';
 export { default as WeatherDataSun } from './WeatherDataSun';
