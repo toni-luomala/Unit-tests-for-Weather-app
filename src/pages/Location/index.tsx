@@ -1,10 +1,9 @@
 // Components
 import { WeatherDataContainer } from 'components/Weather';
-import { LocationName } from 'components/LocationPage';
-import { FavoritesButton } from 'components/LocationPage';
 
 // Other imports
 import { useParams } from 'react-router-dom';
+import LocationTitle from 'components/LocationPage/LocationTitle';
 
 const LocationPage = () => {
   const { latitude, longitude, name, admin1 } = useParams<{
@@ -16,10 +15,8 @@ const LocationPage = () => {
 
   return (
     <>
-      <LocationName name={name} admin1={admin1} />
-
       {name && admin1 && latitude && longitude && (
-        <FavoritesButton
+        <LocationTitle
           name={name}
           admin1={admin1}
           latitude={latitude}

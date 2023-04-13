@@ -1,9 +1,9 @@
-interface WeatherDataTitleProps {
+type Props = {
   name: string | undefined;
   admin1: string | undefined;
-}
+};
 
-const LocationName = ({ name, admin1 }: WeatherDataTitleProps) => {
+const LocationName = ({ name, admin1 }: Props) => {
   return (
     <div>
       <h2>
