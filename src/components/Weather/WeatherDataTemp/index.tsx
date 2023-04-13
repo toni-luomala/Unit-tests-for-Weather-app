@@ -9,12 +9,16 @@ const Temp = styled.p({
 
 type Props = {
   temp: number | undefined;
+  unit: string | undefined;
 };
 
-const WeatherDataTemp = ({ temp }: Props) => {
+const WeatherDataTemp = ({ temp, unit }: Props) => {
   return (
     <div>
-      <Temp>{temp}°C</Temp>
+      <Temp>
+        {temp}
+        {unit}
+      </Temp>
     </div>
   );
 };

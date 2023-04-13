@@ -6,10 +6,10 @@ import SettingsPage from 'pages/Settings';
 // Utils imports:
 import Favorite from 'utils/interfaces/FavoriteInterface';
 import { setBodyStyles } from 'utils/functions/setBodyStyles';
-import Theme from 'utils/interfaces/ThemeInterface';
+import Settings from 'utils/interfaces/SettingsInterface';
 // Redux, reducers:
 import { useDispatch, useSelector } from 'react-redux';
-import { setTheme } from 'reducers/themeSlice';
+import { setTheme, setTempUnit } from 'reducers/settingsSlice';
 import { add } from 'reducers/favoritesSlice';
 // Other imports:
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
@@ -24,7 +24,7 @@ const ContentContainer = styled.div({
 
 const App = () => {
   const dispatch = useDispatch();
-  const darkTheme = useSelector((state: Theme) => state.theme.darkTheme);
+  const darkTheme = useSelector((state: Settings) => state.settings.darkTheme);
 
   useEffect(() => {
     const storedFavorites = JSON.parse(
@@ -44,8 +44,9 @@ const App = () => {
 
   useEffect(() => {
     const storedTheme = localStorage.getItem('darkTheme');
-
+    const storedUnit = localStorage.getItem('tempUnit');
     if (storedTheme !== null) dispatch(setTheme(JSON.parse(storedTheme)));
+    if (storedUnit !== null) dispatch(setTempUnit(storedUnit));
   }, [dispatch]);
 
   return (

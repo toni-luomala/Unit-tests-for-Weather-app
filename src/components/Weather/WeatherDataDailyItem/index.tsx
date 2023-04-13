@@ -28,11 +28,13 @@ const WeatherDataDailyItem = ({ data }: Props) => {
       </p>
 
       <p>
-        <span className="bold">Temp max</span>. {data.temperature_2m_max}°C
+        <span className="bold">Temp max</span>. {data.temperature_2m_max}
+        {data.tempUnit}
       </p>
 
       <p>
-        <span className="bold">Temp min</span>. {data.temperature_2m_min}°C
+        <span className="bold">Temp min</span>. {data.temperature_2m_min}
+        {data.tempUnit}
       </p>
     </Centered>
   );

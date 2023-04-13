@@ -1,10 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit';
 import favoritesReducer from 'reducers/favoritesSlice';
-import themeReducer from 'reducers/themeSlice';
+import settingsReducer from 'reducers/settingsSlice';
 
 export default configureStore({
   reducer: {
     favorites: favoritesReducer,
-    theme: themeReducer,
+    settings: settingsReducer,
   },
 });

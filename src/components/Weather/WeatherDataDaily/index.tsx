@@ -29,6 +29,7 @@ const WeatherDataDaily = ({ data }: Props) => {
               data.daily.precipitation_probability_max[index],
             temperature_2m_max: data.daily.temperature_2m_max[index],
             temperature_2m_min: data.daily.temperature_2m_min[index],
+            tempUnit: data.daily_units.temperature_2m_max,
           };
 
           return <WeatherDataDailyItem key={index} data={dayObject} />;

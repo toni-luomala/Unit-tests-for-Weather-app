@@ -45,7 +45,10 @@ const WeatherDataContainer = ({ latitude, longitude }: Props) => {
             <div>
               <WeatherDataSymbol code={data.current_weather.weathercode} />
 
-              <WeatherDataTemp temp={data.current_weather.temperature} />
+              <WeatherDataTemp
+                temp={data.current_weather.temperature}
+                unit={data.daily_units.temperature_2m_max}
+              />
             </div>
           </Columns>
 

@@ -1,10 +1,11 @@
 import SettingsToggler from 'components/SettingsPage/SettingsToggler';
-import { useEffect } from 'react';
+// import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { setTheme } from 'reducers/themeSlice';
+import { setTheme, setTempUnit } from 'reducers/settingsSlice';
 
 const SettingsPageContainer = () => {
-  const theme = useSelector((state: any) => state.theme.darkTheme);
+  const theme = useSelector((state: any) => state.settings.darkTheme);
+  const unit = useSelector((state: any) => state.settings.tempUnit);
   const dispatch = useDispatch();
 
   const handleToggleTheme = () => {
@@ -13,9 +14,11 @@ const SettingsPageContainer = () => {
     localStorage.setItem('darkTheme', JSON.stringify(newTheme));
   };
 
-  useEffect(() => {
-    localStorage.setItem('darkTheme', JSON.stringify(theme));
-  }, [theme]);
+  const handleChangeUnit = () => {
+    const newUnit = unit === 'celsius' ? 'fahrenheit' : 'celsius';
+    dispatch(setTempUnit(newUnit));
+    localStorage.setItem('tempUnit', newUnit);
+  };
 
   return (
     <>
@@ -24,6 +27,13 @@ const SettingsPageContainer = () => {
         desc="Use dark theme instead of light"
         value={theme}
         onChange={handleToggleTheme}
+      />
+
+      <SettingsToggler
+        title="Temperature unit"
+        desc="Use Fahrenheit instead of Celsius"
+        value={unit === 'fahrenheit'}
+        onChange={handleChangeUnit}
       />
     </>
   );

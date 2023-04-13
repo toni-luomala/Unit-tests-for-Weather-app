@@ -40,4 +40,7 @@ export default interface WeatherObjectInterface {
   hourly_units: HourlyUnits;
   hourly: Hourly;
   daily: Daily;
+  daily_units: {
+    temperature_2m_max: string;
+  };
 }
