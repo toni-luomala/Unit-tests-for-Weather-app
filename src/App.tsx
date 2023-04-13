@@ -9,7 +9,7 @@ import { setBodyStyles } from 'utils/functions/setBodyStyles';
 import Theme from 'utils/interfaces/ThemeInterface';
 // Redux, reducers:
 import { useDispatch, useSelector } from 'react-redux';
-import { toggleTheme } from 'reducers/themeSlice';
+import { setTheme } from 'reducers/themeSlice';
 import { add } from 'reducers/favoritesSlice';
 // Other imports:
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
@@ -24,7 +24,7 @@ const ContentContainer = styled.div({
 
 const App = () => {
   const dispatch = useDispatch();
-  const darkMode = useSelector((state: Theme) => state.theme.darkMode);
+  const darkTheme = useSelector((state: Theme) => state.theme.darkTheme);
 
   useEffect(() => {
     const storedFavorites = JSON.parse(
@@ -39,16 +39,13 @@ const App = () => {
   }, [dispatch]);
 
   useEffect(() => {
-    setBodyStyles(darkMode);
-  }, [darkMode]);
+    setBodyStyles(darkTheme);
+  }, [darkTheme]);
 
   useEffect(() => {
-    const storedTheme = localStorage.getItem('theme');
+    const storedTheme = localStorage.getItem('darkTheme');
 
-    if (storedTheme) {
-      const parsedTheme = JSON.parse(storedTheme);
-      dispatch(toggleTheme(parsedTheme));
-    }
+    if (storedTheme !== null) dispatch(setTheme(JSON.parse(storedTheme)));
   }, [dispatch]);
 
   return (

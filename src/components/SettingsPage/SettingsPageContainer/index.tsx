@@ -1,18 +1,20 @@
 import SettingsToggler from 'components/SettingsPage/SettingsToggler';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { toggleTheme } from 'reducers/themeSlice';
+import { setTheme } from 'reducers/themeSlice';
 
 const SettingsPageContainer = () => {
-  const theme = useSelector((state: any) => state.theme.darkMode);
+  const theme = useSelector((state: any) => state.theme.darkTheme);
   const dispatch = useDispatch();
 
   const handleToggleTheme = () => {
-    dispatch(toggleTheme());
+    const newTheme = !theme;
+    dispatch(setTheme(newTheme));
+    localStorage.setItem('darkTheme', JSON.stringify(newTheme));
   };
 
   useEffect(() => {
-    localStorage.setItem('theme', JSON.stringify(theme));
+    localStorage.setItem('darkTheme', JSON.stringify(theme));
   }, [theme]);
 
   return (
