@@ -16,7 +16,7 @@ const ListItem = styled.div({
   alignItems: 'center',
   justifyContent: 'space-between',
   ':hover': {
-    backgroundColor: '#d4d4d4',
+    backgroundColor: '#b4b4b4',
   },
 });
 

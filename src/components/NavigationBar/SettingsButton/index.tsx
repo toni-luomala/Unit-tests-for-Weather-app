@@ -11,6 +11,9 @@ const Icon = styled.div({
   alignItems: 'center',
   cursor: 'pointer',
   color: 'white',
+  ':hover': {
+    color: '#d4d4d4',
+  },
 });
 
 const SettingsButton = () => {
