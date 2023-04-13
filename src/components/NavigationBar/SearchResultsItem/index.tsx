@@ -1,17 +1,17 @@
 import styled from '@emotion/styled';
 import { Link } from 'react-router-dom';
-import GeocodingResult from 'utils/interfaces/GeocodingInterface';
-
-interface SearchResultsItemProps {
-  result: GeocodingResult;
-}
+import GeocodingResults from 'utils/interfaces/GeocodingInterface';
 
 const Item = styled.p({
   cursor: 'pointer',
   color: 'black',
 });
 
-const SearchResultsItem = ({ result }: SearchResultsItemProps) => {
+type Props = {
+  result: GeocodingResults;
+};
+
+const SearchResultsItem = ({ result }: Props) => {
   return (
     <Link
       to={`/location/${result.latitude}/${result.longitude}${

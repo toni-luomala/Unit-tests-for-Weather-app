@@ -5,16 +5,10 @@ import { WeatherDataWind } from 'components/Weather';
 import { WeatherDataTemp } from 'components/Weather';
 import { WeatherDataSun } from 'components/Weather';
 import { WeatherDataDaily } from 'components/Weather';
-
 // Other imports
 import styled from '@emotion/styled';
 import useFetch from 'hooks/useFetch';
 import FetchInterface from 'utils/interfaces/FetchInterface';
-
-interface WeatherDataProps {
-  latitude: string | undefined;
-  longitude: string | undefined;
-}
 
 const Columns = styled.div({
   display: 'flex',
@@ -22,7 +16,12 @@ const Columns = styled.div({
   justifyContent: 'space-between',
 });
 
-const WeatherDataContainer = ({ latitude, longitude }: WeatherDataProps) => {
+type Props = {
+  latitude: string | undefined;
+  longitude: string | undefined;
+};
+
+const WeatherDataContainer = ({ latitude, longitude }: Props) => {
   const { data, loading, error } = useFetch(
     latitude,
     longitude

@@ -1,13 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
 
-interface SettingsTogglerProps {
-  title: string;
-  desc: string;
-  value: boolean;
-  onChange: any;
-}
-
 const TogglerSwitch = styled.div<{ value: boolean }>`
   display: inline-block;
   width: 40px;
@@ -46,12 +39,14 @@ const SettingsTogglerContainer = styled.div`
   margin-bottom: 30px;
 `;
 
-const SettingsToggler: React.FC<SettingsTogglerProps> = ({
-  title,
-  value,
-  desc,
-  onChange,
-}) => {
+type Props = {
+  title: string;
+  desc: string;
+  value: boolean;
+  onChange: any;
+};
+
+const SettingsToggler: React.FC<Props> = ({ title, value, desc, onChange }) => {
   const handleToggle = () => {
     onChange(!value);
   };

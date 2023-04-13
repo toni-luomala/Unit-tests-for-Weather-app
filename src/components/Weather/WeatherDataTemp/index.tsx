@@ -1,9 +1,5 @@
 import styled from '@emotion/styled';
 
-interface WeatherDataTempProps {
-  temp: number | undefined;
-}
-
 const Temp = styled.p({
   fontSize: '40px',
   textAlign: 'center',
@@ -11,7 +7,11 @@ const Temp = styled.p({
   margin: '15px 0px 0px 0px',
 });
 
-const WeatherDataTemp = ({ temp }: WeatherDataTempProps) => {
+type Props = {
+  temp: number | undefined;
+};
+
+const WeatherDataTemp = ({ temp }: Props) => {
   return (
     <div>
       <Temp>{temp}°C</Temp>

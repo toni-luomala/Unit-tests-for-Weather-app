@@ -1,11 +1,11 @@
-import WeatherObject from 'utils/interfaces/WeatherObjectInterface';
+import WeatherObjectFull from 'utils/interfaces/WeatherObjectFull';
 import windDirectionSymbolReturner from 'utils/functions/WindDirectionSymbol';
 
-interface WeatherDataInterface {
-  data: WeatherObject | null;
-}
+type Props = {
+  data: WeatherObjectFull | null;
+};
 
-const WeatherDataWind = ({ data }: WeatherDataInterface) => {
+const WeatherDataWind = ({ data }: Props) => {
   return (
     <>
       <p>

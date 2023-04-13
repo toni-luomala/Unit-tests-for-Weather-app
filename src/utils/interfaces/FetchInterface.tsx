@@ -1,4 +1,4 @@
-import WeatherObjectInterface from './WeatherObjectInterface';
+import WeatherObjectInterface from './WeatherObjectFull';
 
 export default interface FetchInterface {
   loading: boolean;

@@ -1,13 +1,8 @@
 // Components
 import { WeatherDataDailyItem } from 'components/Weather';
-
 // Other imports
-import WeatherObject from 'utils/interfaces/WeatherObjectInterface';
+import WeatherObjectFull from 'utils/interfaces/WeatherObjectFull';
 import styled from '@emotion/styled';
-
-interface WeatherDataInterface {
-  data: WeatherObject | null;
-}
 
 const DailyWeatherContainer = styled.div({
   display: 'flex',
@@ -16,7 +11,11 @@ const DailyWeatherContainer = styled.div({
   flexWrap: 'wrap',
 });
 
-const WeatherDataDaily = ({ data }: WeatherDataInterface) => {
+type Props = {
+  data: WeatherObjectFull | null;
+};
+
+const WeatherDataDaily = ({ data }: Props) => {
   return (
     <>
       <h2>Daily Weather</h2>

@@ -1,11 +1,11 @@
-import WeatherObject from 'utils/interfaces/WeatherObjectInterface';
+import WeatherObjectFull from 'utils/interfaces/WeatherObjectFull';
 import timeFormatter from 'utils/functions/timeFormatter';
 
-interface WeatherDataInterface {
-  data: WeatherObject;
-}
+type Props = {
+  data: WeatherObjectFull;
+};
 
-const WeatherDataSun = ({ data }: WeatherDataInterface) => {
+const WeatherDataSun = ({ data }: Props) => {
   return (
     <>
       {data.daily.sunrise && data.daily.sunset && (

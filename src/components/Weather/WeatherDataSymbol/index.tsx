@@ -1,16 +1,16 @@
 import weatherCodeSymbolReturner from 'utils/functions/WeatherCodeSymbol';
 import styled from '@emotion/styled';
 
-interface WeatherDataSymbolProps {
-  code: number;
-}
-
 const WeatherSymbol = styled.p({
   fontSize: '70px',
   margin: '0px',
 });
 
-const WeatherDataSymbol = ({ code }: WeatherDataSymbolProps) => {
+type Props = {
+  code: number;
+};
+
+const WeatherDataSymbol = ({ code }: Props) => {
   const codeSymbol = weatherCodeSymbolReturner(code);
 
   return <WeatherSymbol>{codeSymbol}</WeatherSymbol>;
