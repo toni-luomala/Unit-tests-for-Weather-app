@@ -1,4 +1,4 @@
-import SettingsToggler from 'components/SettingsPage/SettingsToggler';
+import { SettingsToggler } from 'components/SettingsPage';
 import { useDispatch, useSelector } from 'react-redux';
 import { setTheme, setTempUnit } from 'reducers/settingsSlice';
 
