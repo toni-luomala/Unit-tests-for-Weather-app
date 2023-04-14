@@ -14,9 +14,6 @@ const settingsSlice = createSlice({
   name: 'settings',
   initialState,
   reducers: {
-    toggleTheme: (state) => {
-      state.darkTheme = !state.darkTheme;
-    },
     setTheme: (state, action: PayloadAction<boolean>) => {
       state.darkTheme = action.payload;
     },
@@ -26,6 +23,6 @@ const settingsSlice = createSlice({
   },
 });
 
-export const { toggleTheme, setTheme, setTempUnit } = settingsSlice.actions;
+export const { setTheme, setTempUnit } = settingsSlice.actions;
 
 export default settingsSlice.reducer;
