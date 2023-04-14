@@ -15,9 +15,11 @@ const settingsSlice = createSlice({
   initialState,
   reducers: {
     setTheme: (state, action: PayloadAction<boolean>) => {
+      localStorage.setItem('darkTheme', JSON.stringify(action.payload));
       state.darkTheme = action.payload;
     },
     setTempUnit: (state, action: PayloadAction<string>) => {
+      localStorage.setItem('tempUnit', action.payload);
       state.tempUnit = action.payload;
     },
   },

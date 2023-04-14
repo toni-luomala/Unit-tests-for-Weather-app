@@ -10,13 +10,11 @@ const SettingsPageContainer = () => {
   const handleToggleTheme = () => {
     const newTheme = !theme;
     dispatch(setTheme(newTheme));
-    localStorage.setItem('darkTheme', JSON.stringify(newTheme));
   };
 
   const handleChangeUnit = () => {
     const newUnit = unit === 'celsius' ? 'fahrenheit' : 'celsius';
     dispatch(setTempUnit(newUnit));
-    localStorage.setItem('tempUnit', newUnit);
   };
 
   return (
