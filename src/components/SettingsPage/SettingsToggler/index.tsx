@@ -47,17 +47,13 @@ type Props = {
 };
 
 const SettingsToggler: React.FC<Props> = ({ title, value, desc, onChange }) => {
-  const handleToggle = () => {
-    onChange(!value);
-  };
-
   return (
     <div>
       <h3>{title}</h3>
 
       <SettingsTogglerContainer>
         <SettingsTogglerLabel>{desc}</SettingsTogglerLabel>
-        <TogglerSwitch value={value} onClick={handleToggle} />
+        <TogglerSwitch value={value} onClick={() => onChange(!value)} />
       </SettingsTogglerContainer>
     </div>
   );
