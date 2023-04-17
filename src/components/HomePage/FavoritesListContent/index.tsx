@@ -2,9 +2,9 @@
 import { FavoritesListItem } from 'components/HomePage';
 
 // Other imports
-import Favorite from 'utils/interfaces/FavoriteInterface';
+import { Location } from 'utils/interfaces';
 
-const FavoritesListContent = ({ items }: { items: Favorite[] }) => {
+const FavoritesListContent = ({ items }: { items: Location[] }) => {
   if (items.length === 0) {
     return (
       <div>
@@ -17,7 +17,7 @@ const FavoritesListContent = ({ items }: { items: Favorite[] }) => {
 
   return (
     <div>
-      {items.map((item: Favorite, index: number) => (
+      {items.map((item: Location, index: number) => (
         <FavoritesListItem key={index} item={item} />
       ))}
     </div>

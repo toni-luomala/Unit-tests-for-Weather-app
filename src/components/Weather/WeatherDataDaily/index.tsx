@@ -1,7 +1,7 @@
 // Components
 import { WeatherDataDailyItem } from 'components/Weather';
 // Other imports
-import WeatherObjectFull from 'utils/interfaces/WeatherObjectFull';
+import { WeatherObjectFull } from 'utils/interfaces';
 import styled from '@emotion/styled';
 
 const DailyWeatherContainer = styled.div({

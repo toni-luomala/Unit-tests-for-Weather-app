@@ -1,4 +1,4 @@
-import WeatherObjectFull from 'utils/interfaces/WeatherObjectFull';
+import { WeatherObjectFull } from 'utils/interfaces';
 import windDirectionSymbolReturner from 'utils/functions/WindDirectionSymbol';
 
 type Props = {

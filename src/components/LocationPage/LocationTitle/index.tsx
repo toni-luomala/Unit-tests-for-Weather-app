@@ -1,4 +1,4 @@
-import Location from 'utils/interfaces/FavoriteInterface';
+import { Location } from 'utils/interfaces';
 import LocationName from '../LocationName';
 import FavoritesButton from '../FavoritesButton';
 import styled from '@emotion/styled';

@@ -8,7 +8,7 @@ import { WeatherDataDaily } from 'components/Weather';
 // Other imports
 import styled from '@emotion/styled';
 import useFetch from 'hooks/useFetchWeather';
-import FetchWeather from 'utils/interfaces/FetchWeatherInterface';
+import { FetchWeather } from 'utils/interfaces';
 
 const Columns = styled.div({
   display: 'flex',

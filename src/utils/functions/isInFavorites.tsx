@@ -1,17 +1,17 @@
-import Favorite from 'utils/interfaces/FavoriteInterface';
+import { Location } from 'utils/interfaces';
 
 const isInFavorites = (
-  favorites: Favorite[],
+  favorites: Location[],
   latitude: string | undefined,
   longitude: string | undefined
 ) => {
   return (
     favorites.some(
-      (fav: Favorite) =>
+      (fav: Location) =>
         fav.latitude === latitude && fav.longitude === longitude
     ) ||
     JSON.parse(localStorage.getItem('favorites') || '[]').some(
-      (fav: Favorite) =>
+      (fav: Location) =>
         fav.latitude === latitude && fav.longitude === longitude
     )
   );

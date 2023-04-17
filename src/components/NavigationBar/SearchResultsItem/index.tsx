@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import { Link } from 'react-router-dom';
-import GeocodingResults from 'utils/interfaces/GeocodingInterface';
+import { Geocoding } from 'utils/interfaces';
 
 const Item = styled.p({
   cursor: 'pointer',
@@ -8,7 +8,7 @@ const Item = styled.p({
 });
 
 type Props = {
-  result: GeocodingResults;
+  result: Geocoding;
 };
 
 const SearchResultsItem = ({ result }: Props) => {

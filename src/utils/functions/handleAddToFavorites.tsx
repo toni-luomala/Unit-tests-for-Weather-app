@@ -1,10 +1,10 @@
-import Favorite from 'utils/interfaces/FavoriteInterface';
+import { Location } from 'utils/interfaces';
 import { Dispatch } from 'redux';
 import { add, remove } from 'reducers/favoritesSlice';
 
 const handleAddToFavorites = (
   dispatch: Dispatch,
-  favorites: Favorite[],
+  favorites: Location[],
   name: string,
   admin1: string,
   latitude: string,

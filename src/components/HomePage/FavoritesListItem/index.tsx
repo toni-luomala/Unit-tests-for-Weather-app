@@ -1,9 +1,9 @@
-import Favorite from 'utils/interfaces/FavoriteInterface';
+import { Location } from 'utils/interfaces';
 import { Link } from 'react-router-dom';
 import styled from '@emotion/styled';
 
 interface FavoritesListItemProps {
-  item: Favorite;
+  item: Location;
 }
 
 const ListItem = styled.div({

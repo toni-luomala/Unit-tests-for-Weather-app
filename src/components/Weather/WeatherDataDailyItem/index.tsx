@@ -4,7 +4,7 @@ import { WeatherDataSymbol } from 'components/Weather';
 // Other imports
 import styled from '@emotion/styled';
 import timeFormatter from 'utils/functions/timeFormatter';
-import WeatherObjectSmall from 'utils/interfaces/WeatherObjectSmall';
+import { WeatherObjectSmall } from 'utils/interfaces';
 
 const Centered = styled.div({
   textAlign: 'center',

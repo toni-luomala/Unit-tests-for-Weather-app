@@ -4,9 +4,9 @@ import HomePage from 'pages/Home';
 import LocationPage from 'pages/Location';
 import SettingsPage from 'pages/Settings';
 // Utils imports:
-import Favorite from 'utils/interfaces/FavoriteInterface';
+import { Settings } from 'utils/interfaces';
+import { Location } from 'utils/interfaces';
 import { setBodyStyles } from 'utils/functions/setBodyStyles';
-import Settings from 'utils/interfaces/SettingsInterface';
 // Redux, reducers:
 import { useDispatch, useSelector } from 'react-redux';
 import { setTheme, setTempUnit } from 'reducers/settingsSlice';
@@ -46,7 +46,7 @@ const App = () => {
       dispatch(setTempUnit(JSON.parse(storedFahrenheit)));
 
     if (storedFavorites.length) {
-      storedFavorites.forEach((fav: Favorite) => {
+      storedFavorites.forEach((fav: Location) => {
         dispatch(add(fav));
       });
     }

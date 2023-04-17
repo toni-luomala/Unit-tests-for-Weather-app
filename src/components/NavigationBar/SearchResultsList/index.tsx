@@ -2,7 +2,7 @@
 import SearchResultsItem from 'components/NavigationBar/SearchResultsItem';
 // Other imports
 import styled from '@emotion/styled';
-import GeocodingResult from 'utils/interfaces/GeocodingInterface';
+import { Geocoding } from 'utils/interfaces';
 
 const ResultsContainer = styled.div({
   position: 'absolute',
@@ -29,7 +29,7 @@ const ResultsDiv = styled.div({
 });
 
 type Props = {
-  results: GeocodingResult[];
+  results: Geocoding[];
 };
 
 const SearchResultsList = (props: Props) => {
@@ -38,7 +38,7 @@ const SearchResultsList = (props: Props) => {
   return (
     <ResultsContainer>
       <ResultsDiv>
-        {props.results.map((result: GeocodingResult) => (
+        {props.results.map((result: Geocoding) => (
           <SearchResultsItem key={result.id} result={result} />
         ))}
       </ResultsDiv>

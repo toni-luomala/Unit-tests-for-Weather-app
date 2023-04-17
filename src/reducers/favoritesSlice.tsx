@@ -1,8 +1,8 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import Favorite from 'utils/interfaces/FavoriteInterface';
+import { Location } from 'utils/interfaces';
 
 type FavoritesState = {
-  items: Favorite[];
+  items: Location[];
 };
 
 const initialState: FavoritesState = {
@@ -13,7 +13,7 @@ export const favoritesSlice = createSlice({
   name: 'favorites',
   initialState: initialState,
   reducers: {
-    add: (state, action: PayloadAction<Favorite>) => {
+    add: (state, action: PayloadAction<Location>) => {
       state.items.push(action.payload);
     },
     remove: (state, action: PayloadAction<string>) => {

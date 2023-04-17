@@ -1,7 +1,7 @@
 import { SettingsToggler } from 'components/SettingsPage';
 import { useDispatch, useSelector } from 'react-redux';
 import { setTheme, setTempUnit } from 'reducers/settingsSlice';
-import Settings from 'utils/interfaces/SettingsInterface';
+import { Settings } from 'utils/interfaces';
 
 const SettingsPageContainer = () => {
   const { useDarkTheme, useFahrenheit } = useSelector(
