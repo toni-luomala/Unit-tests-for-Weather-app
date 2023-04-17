@@ -29,7 +29,7 @@ const WeatherDataContainer = ({ latitude, longitude }: Props) => {
 
   if (loading) return <Loading />;
 
-  if (error) return <Error />;
+  if (error) return <Error error={error} />;
 
   return (
     <>
