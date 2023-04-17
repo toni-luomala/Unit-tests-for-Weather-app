@@ -1,5 +1,5 @@
 // Components
-import { FavoritesListContent } from 'components/HomePage';
+import { FavoritesListContent } from 'components/FavoritesList';
 // Other imports
 import { useSelector } from 'react-redux';
 

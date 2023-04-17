@@ -1,6 +1,5 @@
 // Components
-import { FavoritesListItem } from 'components/HomePage';
-
+import { FavoritesListItem } from 'components/FavoritesList';
 // Other imports
 import { Location } from 'utils/interfaces';
 
