@@ -1,7 +1,14 @@
 import { useSelector } from 'react-redux';
+import { FavoritesList, Location } from 'utils/interfaces';
 
-const FavoritesListContainer = ({ render }: any) => {
-  const items = useSelector((state: any) => state.favorites.items);
+type RenderPropType = (items: Location[]) => JSX.Element | null;
+
+interface Props {
+  render: RenderPropType;
+}
+
+const FavoritesListContainer = ({ render }: Props) => {
+  const items = useSelector((state: FavoritesList) => state.favorites.items);
 
   return render(items);
 };

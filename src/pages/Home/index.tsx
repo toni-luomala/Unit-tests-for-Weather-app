@@ -2,7 +2,7 @@ import {
   FavoritesListContainer,
   FavoritesListContent,
 } from 'components/FavoritesList';
-import Favorite from 'utils/interfaces/FavoriteInterface';
+import { Location } from 'utils/interfaces';
 
 const HomePage = () => {
   return (
@@ -10,7 +10,7 @@ const HomePage = () => {
       <h3>Favorite locations:</h3>
 
       <FavoritesListContainer
-        render={(items: Favorite[]) => <FavoritesListContent items={items} />}
+        render={(items: Location[]) => <FavoritesListContent items={items} />}
       />
     </>
   );
