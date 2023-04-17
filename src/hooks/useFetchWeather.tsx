@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import axios from 'axios';
 
-const useFetch = (
+const useFetchWeather = (
   latitude: string | undefined,
   longitude: string | undefined
 ) => {
@@ -13,11 +13,10 @@ const useFetch = (
   const useFahrenheit = useSelector(
     (state: any) => state.settings.useFahrenheit
   );
+  const tempUnit = useFahrenheit ? 'fahrenheit' : 'celsius';
 
   useEffect(() => {
     if (latitude && longitude) {
-      const tempUnit = useFahrenheit ? 'fahrenheit' : 'celsius';
-
       axios
         .get(
           `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&daily=weathercode,temperature_2m_max,temperature_2m_min,sunrise,sunset,precipitation_probability_max&current_weather=true&windspeed_unit=ms&forecast_days=3&timezone=auto&temperature_unit=${tempUnit}`
@@ -31,8 +30,8 @@ const useFetch = (
           setError(error);
         });
     }
-  }, [latitude, longitude, useFahrenheit]);
+  }, [latitude, longitude, tempUnit]);
 
   return { data, loading, error };
 };
-export default useFetch;
+export default useFetchWeather;
