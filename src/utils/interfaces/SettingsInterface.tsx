@@ -1,6 +1,6 @@
 export default interface settingsInterface {
   settings: {
-    darkTheme: boolean;
-    tempUnit: string;
+    useDarkTheme: boolean;
+    useFahrenheit: boolean;
   };
 }

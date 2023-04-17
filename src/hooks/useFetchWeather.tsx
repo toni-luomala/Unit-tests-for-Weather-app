@@ -2,8 +2,6 @@ import { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import axios from 'axios';
 
-// Hook, jossa haetaan säädata halutusta sijainnista.
-
 const useFetch = (
   latitude: string | undefined,
   longitude: string | undefined
@@ -12,10 +10,14 @@ const useFetch = (
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  const tempUnit = useSelector((state: any) => state.settings.tempUnit);
+  const useFahrenheit = useSelector(
+    (state: any) => state.settings.useFahrenheit
+  );
 
   useEffect(() => {
     if (latitude && longitude) {
+      const tempUnit = useFahrenheit ? 'fahrenheit' : 'celsius';
+
       axios
         .get(
           `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&daily=weathercode,temperature_2m_max,temperature_2m_min,sunrise,sunset,precipitation_probability_max&current_weather=true&windspeed_unit=ms&forecast_days=3&timezone=auto&temperature_unit=${tempUnit}`
@@ -29,7 +31,7 @@ const useFetch = (
           setError(error);
         });
     }
-  }, [latitude, longitude, tempUnit]);
+  }, [latitude, longitude, useFahrenheit]);
 
   return { data, loading, error };
 };

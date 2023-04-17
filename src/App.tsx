@@ -24,29 +24,32 @@ const ContentContainer = styled.div({
 
 const App = () => {
   const dispatch = useDispatch();
-  const darkTheme = useSelector((state: Settings) => state.settings.darkTheme);
+  const useDarkTheme = useSelector(
+    (state: Settings) => state.settings.useDarkTheme
+  );
 
   useEffect(() => {
+    setBodyStyles(useDarkTheme);
+  }, [useDarkTheme]);
+
+  useEffect(() => {
+    const storedDarkTheme = localStorage.getItem('useDarkTheme');
+    const storedFahrenheit = localStorage.getItem('useFahrenheit');
     const storedFavorites = JSON.parse(
       localStorage.getItem('favorites') || '[]'
     );
+
+    if (storedDarkTheme !== null)
+      dispatch(setTheme(JSON.parse(storedDarkTheme)));
+
+    if (storedFahrenheit !== null)
+      dispatch(setTempUnit(JSON.parse(storedFahrenheit)));
 
     if (storedFavorites.length) {
       storedFavorites.forEach((fav: Favorite) => {
         dispatch(add(fav));
       });
     }
-  }, [dispatch]);
-
-  useEffect(() => {
-    setBodyStyles(darkTheme);
-  }, [darkTheme]);
-
-  useEffect(() => {
-    const storedTheme = localStorage.getItem('darkTheme');
-    const storedUnit = localStorage.getItem('tempUnit');
-    if (storedTheme !== null) dispatch(setTheme(JSON.parse(storedTheme)));
-    if (storedUnit !== null) dispatch(setTempUnit(storedUnit));
   }, [dispatch]);
 
   return (

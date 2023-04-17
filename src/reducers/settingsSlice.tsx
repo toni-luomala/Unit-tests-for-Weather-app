@@ -1,13 +1,13 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 type SettingsState = {
-  darkTheme: boolean;
-  tempUnit: string;
+  useDarkTheme: boolean;
+  useFahrenheit: boolean;
 };
 
 const initialState: SettingsState = {
-  darkTheme: false,
-  tempUnit: 'celsius',
+  useDarkTheme: false,
+  useFahrenheit: false,
 };
 
 const settingsSlice = createSlice({
@@ -15,12 +15,12 @@ const settingsSlice = createSlice({
   initialState,
   reducers: {
     setTheme: (state, action: PayloadAction<boolean>) => {
-      localStorage.setItem('darkTheme', JSON.stringify(action.payload));
-      state.darkTheme = action.payload;
+      localStorage.setItem('useDarkTheme', JSON.stringify(action.payload));
+      state.useDarkTheme = action.payload;
     },
-    setTempUnit: (state, action: PayloadAction<string>) => {
-      localStorage.setItem('tempUnit', action.payload);
-      state.tempUnit = action.payload;
+    setTempUnit: (state, action: PayloadAction<boolean>) => {
+      localStorage.setItem('useFahrenheit', JSON.stringify(action.payload));
+      state.useFahrenheit = action.payload;
     },
   },
 });
