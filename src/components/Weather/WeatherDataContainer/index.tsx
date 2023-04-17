@@ -8,7 +8,7 @@ import { WeatherDataDaily } from 'components/Weather';
 // Other imports
 import styled from '@emotion/styled';
 import useFetch from 'hooks/useFetchWeather';
-import { FetchWeather } from 'utils/interfaces';
+import Fetch from 'utils/interfaces/FetchWeatherInterface';
 
 const Columns = styled.div({
   display: 'flex',
@@ -22,10 +22,7 @@ type Props = {
 };
 
 const WeatherDataContainer = ({ latitude, longitude }: Props) => {
-  const { data, loading, error } = useFetch(
-    latitude,
-    longitude
-  ) as FetchWeather;
+  const { data, loading, error } = useFetch(latitude, longitude) as Fetch;
 
   if (loading) return <Loading />;
 
