@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Settings } from 'utils/interfaces';
 import { useSelector } from 'react-redux';
 import axios from 'axios';
 
@@ -11,7 +12,7 @@ const useFetchWeather = (
   const [error, setError] = useState(null);
 
   const useFahrenheit = useSelector(
-    (state: any) => state.settings.useFahrenheit
+    (state: Settings) => state.settings.useFahrenheit
   );
   const tempUnit = useFahrenheit ? 'fahrenheit' : 'celsius';
 
