@@ -1,11 +1,17 @@
-import { FavoritesList } from 'components/FavoritesList';
+import {
+  FavoritesListContainer,
+  FavoritesListContent,
+} from 'components/FavoritesList';
+import Favorite from 'utils/interfaces/FavoriteInterface';
 
 const HomePage = () => {
   return (
     <>
-      <h1>Welcome!</h1>
+      <h3>Favorite locations:</h3>
 
-      <FavoritesList />
+      <FavoritesListContainer
+        render={(items: Favorite[]) => <FavoritesListContent items={items} />}
+      />
     </>
   );
 };
