@@ -17,8 +17,8 @@ const Columns = styled.div({
 });
 
 type Props = {
-  latitude: string | undefined;
-  longitude: string | undefined;
+  latitude: string;
+  longitude: string;
 };
 
 const WeatherDataContainer = ({ latitude, longitude }: Props) => {

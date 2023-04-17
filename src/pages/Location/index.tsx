@@ -24,7 +24,9 @@ const LocationPage = () => {
         />
       )}
 
-      <WeatherDataContainer latitude={latitude} longitude={longitude} />
+      {latitude && longitude && (
+        <WeatherDataContainer latitude={latitude} longitude={longitude} />
+      )}
     </>
   );
 };
