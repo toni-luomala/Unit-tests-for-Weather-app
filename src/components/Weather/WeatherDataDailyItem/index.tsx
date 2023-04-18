@@ -3,7 +3,7 @@ import { WeatherDataSymbol } from 'components/Weather';
 
 // Other imports
 import styled from '@emotion/styled';
-import timeFormatter from 'utils/functions/timeFormatter';
+import { timeFormatter } from 'utils/functions';
 import { WeatherObjectSmall } from 'utils/interfaces';
 
 const Centered = styled.div({

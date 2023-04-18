@@ -1,5 +1,5 @@
 import { WeatherObjectFull } from 'utils/interfaces';
-import timeFormatter from 'utils/functions/timeFormatter';
+import { timeFormatter } from 'utils/functions';
 
 type Props = {
   data: WeatherObjectFull;

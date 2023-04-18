@@ -1,5 +1,5 @@
 import { WeatherObjectFull } from 'utils/interfaces';
-import windDirectionSymbolReturner from 'utils/functions/WindDirectionSymbol';
+import { WindDirectionSymbol } from 'utils/functions';
 
 type Props = {
   data: WeatherObjectFull | null;
@@ -16,7 +16,7 @@ const WeatherDataWind = ({ data }: Props) => {
       {data?.current_weather.winddirection && (
         <p>
           <span className="bold">Wind Direction:</span>{' '}
-          {windDirectionSymbolReturner(data?.current_weather.winddirection)}
+          {WindDirectionSymbol(data?.current_weather.winddirection)}
         </p>
       )}
     </>

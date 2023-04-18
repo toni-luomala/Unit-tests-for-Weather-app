@@ -4,7 +4,7 @@ import { Location } from 'utils/interfaces';
 import { setTheme, setTempUnit } from 'reducers/settingsSlice';
 import { add } from 'reducers/favoritesSlice';
 
-export const loadLocalStorageData = (dispatch: Dispatch<AnyAction>) => {
+const loadLocalStorageData = (dispatch: Dispatch<AnyAction>) => {
   const storedDarkTheme = localStorage.getItem('useDarkTheme');
   const storedFahrenheit = localStorage.getItem('useFahrenheit');
   const storedFavorites = JSON.parse(localStorage.getItem('favorites') || '[]');
@@ -23,3 +23,5 @@ export const loadLocalStorageData = (dispatch: Dispatch<AnyAction>) => {
     });
   }
 };
+
+export default loadLocalStorageData;

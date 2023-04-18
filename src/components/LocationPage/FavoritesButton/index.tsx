@@ -1,5 +1,5 @@
-import handleAddToFavorites from 'utils/functions/handleAddToFavorites';
-import isInFavorites from 'utils/functions/isInFavorites';
+import { handleAddToFavorites } from 'utils/functions';
+import { isInFavorites } from 'utils/functions';
 import { Location } from 'utils/interfaces';
 import { useDispatch, useSelector } from 'react-redux';
 

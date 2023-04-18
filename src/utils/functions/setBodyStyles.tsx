@@ -3,4 +3,4 @@ const setBodyStyles = (darkTheme: boolean) => {
   document.body.style.color = darkTheme ? 'white' : '#1a1a1a';
 };
 
-export { setBodyStyles };
+export default setBodyStyles;

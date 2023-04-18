@@ -5,8 +5,8 @@ import LocationPage from 'pages/Location';
 import SettingsPage from 'pages/Settings';
 // Utils imports:
 import { Settings } from 'utils/interfaces';
-import { setBodyStyles } from 'utils/functions/setBodyStyles';
-import { loadLocalStorageData } from './utils/functions/loadLocalStorageData';
+import { setBodyStyles } from 'utils/functions';
+import { loadLocalStorageData } from 'utils/functions';
 // Redux, reducers:
 import { useDispatch, useSelector } from 'react-redux';
 // Other imports:
