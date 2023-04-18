@@ -15,7 +15,7 @@ const LocationPage = () => {
 
   return (
     <>
-      {name && admin1 && latitude && longitude && (
+      {name && latitude && longitude && (
         <LocationTitle
           name={name}
           admin1={admin1}

@@ -6,7 +6,7 @@ const handleAddToFavorites = (
   dispatch: Dispatch,
   favorites: Location[],
   name: string,
-  admin1: string,
+  admin1: string | undefined,
   latitude: string,
   longitude: string
 ) => {
