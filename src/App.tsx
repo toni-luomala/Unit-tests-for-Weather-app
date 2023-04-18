@@ -5,12 +5,10 @@ import LocationPage from 'pages/Location';
 import SettingsPage from 'pages/Settings';
 // Utils imports:
 import { Settings } from 'utils/interfaces';
-import { Location } from 'utils/interfaces';
 import { setBodyStyles } from 'utils/functions/setBodyStyles';
+import { loadLocalStorageData } from './utils/functions/loadLocalStorageData';
 // Redux, reducers:
 import { useDispatch, useSelector } from 'react-redux';
-import { setTheme, setTempUnit } from 'reducers/settingsSlice';
-import { add } from 'reducers/favoritesSlice';
 // Other imports:
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import styled from '@emotion/styled';
@@ -24,32 +22,14 @@ const ContentContainer = styled.div({
 
 const App = () => {
   const dispatch = useDispatch();
-  const useDarkTheme = useSelector(
-    (state: Settings) => state.settings.useDarkTheme
-  );
+  const { useDarkTheme } = useSelector((state: Settings) => state.settings);
 
   useEffect(() => {
     setBodyStyles(useDarkTheme);
   }, [useDarkTheme]);
 
   useEffect(() => {
-    const storedDarkTheme = localStorage.getItem('useDarkTheme');
-    const storedFahrenheit = localStorage.getItem('useFahrenheit');
-    const storedFavorites = JSON.parse(
-      localStorage.getItem('favorites') || '[]'
-    );
-
-    if (storedDarkTheme !== null)
-      dispatch(setTheme(JSON.parse(storedDarkTheme)));
-
-    if (storedFahrenheit !== null)
-      dispatch(setTempUnit(JSON.parse(storedFahrenheit)));
-
-    if (storedFavorites.length) {
-      storedFavorites.forEach((fav: Location) => {
-        dispatch(add(fav));
-      });
-    }
+    loadLocalStorageData(dispatch);
   }, [dispatch]);
 
   return (
@@ -60,12 +40,11 @@ const App = () => {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="*" element={<Navigate to="/" replace />} />
-
+          <Route path="/settings" element={<SettingsPage />} />
           <Route
-            path="/location/:latitude/:longitude/:name?/:admin1?"
+            path="/location/:latitude/:longitude/:name/:admin1?"
             element={<LocationPage />}
           />
-          <Route path="/settings" element={<SettingsPage />} />
         </Routes>
       </ContentContainer>
     </BrowserRouter>
