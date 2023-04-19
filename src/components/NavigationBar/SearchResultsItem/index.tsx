@@ -14,9 +14,9 @@ type Props = {
 const SearchResultsItem = ({ result }: Props) => {
   return (
     <Link
-      to={`/location/${result.latitude}/${result.longitude}${
-        result.name ? '/' + result.name : ''
-      }${result.admin1 ? '/' + result.admin1 : ''}`}
+      to={`/location/${result.latitude}/${result.longitude}/${result.name}${
+        result.admin1 ? '/' + result.admin1 : ''
+      }`}
     >
       <Item>
         <span className="bold">{result.name}</span>
