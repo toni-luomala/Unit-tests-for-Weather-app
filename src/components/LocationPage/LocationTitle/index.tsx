@@ -1,15 +1,9 @@
-import { Location } from 'utils/interfaces';
-import LocationName from '../LocationName';
-import FavoritesButton from '../FavoritesButton';
-import styled from '@emotion/styled';
+// Components
+import { FavoritesButton, LocationName } from 'components/LocationPage';
 
-const Row = styled.div({
-  display: 'flex',
-  flexDirection: 'row',
-  alignItems: 'center',
-  justifyContent: 'space-between',
-  flexWrap: 'wrap',
-});
+// Other imports
+import { Location } from 'utils/interfaces';
+import { Row } from './styles';
 
 const LocationTitle = ({ name, admin1, longitude, latitude }: Location) => {
   return (

@@ -6,7 +6,7 @@ import styled from '@emotion/styled';
 import { timeFormatter } from 'utils/functions';
 import { WeatherObjectSmall } from 'utils/interfaces';
 
-const Centered = styled.div({
+const ItemBox = styled.div({
   textAlign: 'center',
   margin: '0px 15px',
 });
@@ -17,7 +17,7 @@ type Props = {
 
 const WeatherDataDailyItem = ({ data }: Props) => {
   return (
-    <Centered>
+    <ItemBox>
       <h3>{timeFormatter(data.time)}</h3>
 
       <WeatherDataSymbol code={data.weathercode} />
@@ -36,7 +36,7 @@ const WeatherDataDailyItem = ({ data }: Props) => {
         <span className="bold">Temp min</span>. {data.temperature_2m_min}
         {data.tempUnit}
       </p>
-    </Centered>
+    </ItemBox>
   );
 };
 

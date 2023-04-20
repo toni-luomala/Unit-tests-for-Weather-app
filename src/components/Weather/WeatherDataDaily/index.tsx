@@ -2,14 +2,7 @@
 import { WeatherDataDailyItem } from 'components/Weather';
 // Other imports
 import { WeatherObjectFull } from 'utils/interfaces';
-import styled from '@emotion/styled';
-
-const DailyWeatherContainer = styled.div({
-  display: 'flex',
-  flexDirection: 'row',
-  justifyContent: 'space-evenly',
-  flexWrap: 'wrap',
-});
+import { DailyWeatherContainer } from './styles';
 
 type Props = {
   data: WeatherObjectFull | null;

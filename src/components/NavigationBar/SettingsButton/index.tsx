@@ -1,20 +1,6 @@
-import styled from '@emotion/styled';
 import { Link } from 'react-router-dom';
 import { IoMdSettings } from 'react-icons/io';
-
-const Icon = styled.div({
-  height: '50px',
-  width: '30px',
-  marginLeft: '5px',
-  display: 'flex',
-  justifyContent: 'center',
-  alignItems: 'center',
-  cursor: 'pointer',
-  color: 'white',
-  ':hover': {
-    color: '#d4d4d4',
-  },
-});
+import { Icon } from './styles';
 
 const SettingsButton = () => {
   return (

@@ -2,20 +2,9 @@
 import { SearchResultsList } from 'components/NavigationBar';
 
 // Other imports
-import styled from '@emotion/styled';
 import useSearch from 'hooks/useSearch';
 import useSearchBar from 'hooks/useSearchBar';
-
-const SearchForm = styled.form({
-  width: '90%',
-  maxWidth: '300px',
-  display: 'flex',
-  flexDirection: 'column',
-});
-
-const SearchInput = styled.input({
-  height: '20px',
-});
+import { SearchForm, SearchInput } from './styles';
 
 const SearchBar = () => {
   const { searchWord, setSearchWord, results } = useSearch();

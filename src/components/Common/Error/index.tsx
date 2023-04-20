@@ -1,9 +1,4 @@
-import styled from '@emotion/styled';
-
-const ErrorMessage = styled.div({
-  color: 'red',
-  textAlign: 'center',
-});
+import { ErrorMessage } from './styles';
 
 const Error = ({ error }: any) => {
   return (
