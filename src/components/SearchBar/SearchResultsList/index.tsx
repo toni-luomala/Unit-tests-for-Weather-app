@@ -1,5 +1,5 @@
 // Components
-import SearchResultsItem from 'components/NavigationBar/SearchResultsItem';
+import { SearchResultsItem } from 'components/SearchBar';
 // Other imports
 import { Geocoding } from 'utils/interfaces';
 import { ResultsContainer, ResultsDiv } from './styles';

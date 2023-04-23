@@ -7,6 +7,7 @@ const useSearchBar = () => {
   > | null>(null);
 
   const handleBlur = () => {
+    console.log('blur');
     // Delay hiding the results for 100ms
     setHideResultsTimeout(
       setTimeout(() => {
@@ -16,6 +17,7 @@ const useSearchBar = () => {
   };
 
   const handleFocus = () => {
+    console.log('focus');
     // Clear the timeout when the input is focused again
     if (hideResultsTimeout) {
       clearTimeout(hideResultsTimeout);

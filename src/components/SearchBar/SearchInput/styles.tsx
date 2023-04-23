@@ -5,10 +5,11 @@ const SearchForm = styled.form({
   maxWidth: '300px',
   display: 'flex',
   flexDirection: 'column',
+  marginLeft: '10px',
 });
 
-const SearchInput = styled.input({
+const TextInput = styled.input({
   height: '20px',
 });
 
-export { SearchForm, SearchInput };
+export { SearchForm, TextInput };

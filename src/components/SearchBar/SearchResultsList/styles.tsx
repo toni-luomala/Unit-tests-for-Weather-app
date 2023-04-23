@@ -11,7 +11,8 @@ const ResultsContainer = styled.div({
 
 const ResultsDiv = styled.div({
   position: 'relative',
-  top: '20px',
+  top: '102px',
+  right: '57px',
   backgroundColor: 'white',
   color: 'black',
   padding: '0px 10px 5px 10px',
