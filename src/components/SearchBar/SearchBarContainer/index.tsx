@@ -4,15 +4,7 @@ import { SearchInput, SearchResultsList } from 'components/SearchBar';
 // Other imports
 import useSearchBar from 'hooks/useSearchBar';
 import useSearch from 'hooks/useSearch';
-import styled from '@emotion/styled';
-
-const Column = styled.div({
-  display: 'flex',
-  flexDirection: 'column',
-  width: '100%',
-  maxWidth: '300px',
-  marginLeft: '10px',
-});
+import Column from './styles';
 
 const SearchBar = () => {
   const { searchWord, setSearchWord, results } = useSearch();

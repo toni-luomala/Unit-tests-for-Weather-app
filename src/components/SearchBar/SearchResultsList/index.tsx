@@ -15,12 +15,12 @@ const SearchResultsList = ({ results, setSearchWord }: Props) => {
   return (
     <ResultsContainer>
       <ResultsDiv>
-        {results.map((result: Geocoding) => (
-          <SearchResultsItem
-            key={result.id}
-            result={result}
-            setSearchWord={setSearchWord}
-          />
+        {results.map((result: Geocoding, index: number) => (
+          <div key={result.id}>
+            <SearchResultsItem result={result} setSearchWord={setSearchWord} />
+
+            {index < results.length - 1 && <hr />}
+          </div>
         ))}
       </ResultsDiv>
     </ResultsContainer>
