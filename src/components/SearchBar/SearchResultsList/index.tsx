@@ -6,16 +6,21 @@ import { ResultsContainer, ResultsDiv } from './styles';
 
 type Props = {
   results: Geocoding[];
+  setSearchWord: Function;
 };
 
-const SearchResultsList = (props: Props) => {
-  if (props.results.length < 1) <></>;
+const SearchResultsList = ({ results, setSearchWord }: Props) => {
+  if (results.length < 1) <></>;
 
   return (
     <ResultsContainer>
       <ResultsDiv>
-        {props.results.map((result: Geocoding) => (
-          <SearchResultsItem key={result.id} result={result} />
+        {results.map((result: Geocoding) => (
+          <SearchResultsItem
+            key={result.id}
+            result={result}
+            setSearchWord={setSearchWord}
+          />
         ))}
       </ResultsDiv>
     </ResultsContainer>

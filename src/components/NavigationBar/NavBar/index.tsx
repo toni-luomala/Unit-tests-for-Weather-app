@@ -4,11 +4,7 @@ import { SearchBar } from 'components/SearchBar';
 import SettingsButton from 'components/NavigationBar/SettingsButton';
 
 // Other imports
-import {
-  NavigationBar,
-  NavigationBarContent,
-  SearchBarAndSettingsDiv,
-} from './styles';
+import { NavigationBar, NavigationBarContent } from './styles';
 
 const NavBar = () => {
   return (
@@ -16,11 +12,9 @@ const NavBar = () => {
       <NavigationBarContent>
         <NavBarLogo />
 
-        <SearchBarAndSettingsDiv>
-          <SearchBar />
+        <SearchBar />
 
-          <SettingsButton />
-        </SearchBarAndSettingsDiv>
+        <SettingsButton />
       </NavigationBarContent>
     </NavigationBar>
   );

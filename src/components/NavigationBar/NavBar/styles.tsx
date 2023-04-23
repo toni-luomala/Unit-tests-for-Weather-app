@@ -12,6 +12,7 @@ const NavigationBarContent = styled.div({
   height: '100%',
   maxWidth: '600px',
   display: 'flex',
+  flexDirection: 'row',
   alignItems: 'center',
   justifyContent: 'space-between',
   boxSizing: 'border-box',

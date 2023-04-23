@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const Logo = styled.img({
   width: '100%',
-  maxWidth: '300px',
+  maxWidth: '200px',
 });
 
 const NavBarLogo = () => {

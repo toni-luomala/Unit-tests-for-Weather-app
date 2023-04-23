@@ -9,14 +9,20 @@ const Item = styled.p({
 
 type Props = {
   result: Geocoding;
+  setSearchWord: Function;
 };
 
-const SearchResultsItem = ({ result }: Props) => {
+const SearchResultsItem = ({ result, setSearchWord }: Props) => {
+  const handleClick = () => {
+    setSearchWord('');
+  };
+
   return (
     <Link
       to={`/location/${result.latitude}/${result.longitude}/${result.name}${
         result.admin1 ? '/' + result.admin1 : ''
       }`}
+      onClick={handleClick}
     >
       <Item>
         <span className="bold">{result.name}</span>
