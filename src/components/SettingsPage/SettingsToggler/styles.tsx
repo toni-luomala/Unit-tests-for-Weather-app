@@ -1,4 +1,4 @@
-import styled from '@emotion/styled';
+import styled from '@emotion/styled'
 
 const TogglerSwitch = styled.div<{ value: boolean }>`
   display: inline-block;
@@ -24,18 +24,18 @@ const TogglerSwitch = styled.div<{ value: boolean }>`
     transition: transform 0.3s ease;
     transform: ${({ value }) => (value ? 'translateX(20px)' : 'translateX(0)')};
   }
-`;
+`
 
 const SettingsTogglerLabel = styled.label`
   display: inline-block;
   margin-right: 10px;
   font-size: 14px;
-`;
+`
 
 const SettingsTogglerContainer = styled.div`
   display: flex;
   align-items: center;
   margin-bottom: 30px;
-`;
+`
 
-export { TogglerSwitch, SettingsTogglerLabel, SettingsTogglerContainer };
+export { TogglerSwitch, SettingsTogglerLabel, SettingsTogglerContainer }

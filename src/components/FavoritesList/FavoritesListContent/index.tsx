@@ -1,9 +1,10 @@
 // Components
-import { FavoritesListItem } from 'components/FavoritesList';
+import { FavoritesListItem } from 'components/FavoritesList'
 // Other imports
-import { Location } from 'utils/interfaces';
+import { Location } from 'utils/interfaces'
 
 const FavoritesListContent = ({ items }: { items: Location[] }) => {
+  //console.log('items: ', items)
   if (items.length === 0) {
     return (
       <div>
@@ -11,7 +12,7 @@ const FavoritesListContent = ({ items }: { items: Location[] }) => {
 
         <p>Add locations to favorites to access their weather pages here.</p>
       </div>
-    );
+    )
   }
 
   return (
@@ -20,7 +21,7 @@ const FavoritesListContent = ({ items }: { items: Location[] }) => {
         <FavoritesListItem key={index} item={item} />
       ))}
     </div>
-  );
-};
+  )
+}
 
-export default FavoritesListContent;
+export default FavoritesListContent

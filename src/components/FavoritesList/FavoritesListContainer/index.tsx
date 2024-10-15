@@ -1,16 +1,17 @@
-import { useSelector } from 'react-redux';
-import { FavoritesList, Location } from 'utils/interfaces';
+import { useSelector } from 'react-redux'
+import { FavoritesList, Location } from 'utils/interfaces'
 
-type RenderPropType = (items: Location[]) => JSX.Element | null;
+type RenderPropType = (items: Location[]) => JSX.Element | null
 
 interface Props {
-  render: RenderPropType;
+  render: RenderPropType
 }
 
 const FavoritesListContainer = ({ render }: Props) => {
-  const items = useSelector((state: FavoritesList) => state.favorites.items);
+  const items = useSelector((state: FavoritesList) => state.favorites.items)
+  console.log('items: ', items)
 
-  return render(items);
-};
+  return render(items)
+}
 
-export default FavoritesListContainer;
+export default FavoritesListContainer
